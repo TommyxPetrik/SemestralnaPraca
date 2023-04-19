@@ -55,6 +55,20 @@ $choice = $_REQUEST['choice'];
                 </li>';
                 }
                 ?>
+                <?php if ($userdata){
+                    echo '<li class="nav-item">
+                    <a class="nav-link" href="profile.php">Profile</a>
+                </li>';
+                }
+                ?>
+                <?php if ($userdata){
+                    if ($userdata['trial'] == 99){
+                        echo '<li class="nav-item">
+                    <a class="nav-link" href="admin.php">Admin</a>
+                </li>';
+                    }
+                }
+                ?>
             </ul>
         </div>
     </div>
@@ -64,7 +78,7 @@ $choice = $_REQUEST['choice'];
         <h6 class="display-4 has-line">PLANS</h6>
         <p class="mb-5 pb-4">Server hosting plan for your own Website.</p>
         <?php if (!$userdata){
-            echo '<h6 class="display-4 justify-content-center">YOU HAVE TO SIGN IN IN ORDER TO CONTINUE</h6>';
+            echo '<h6 class="display-4 justify-content-center" >YOU HAVE TO SIGN IN, IN ORDER TO CONTINUE</h6>';
             echo '<li class="nav-item">
                     <a class="nav-link btn btn-primary text-dark shadow-none ml-md-4"
                       href="login.php">Sign in</a>
@@ -116,17 +130,16 @@ $choice = $_REQUEST['choice'];
 
                 if ($choice == 3){
                     echo '<div class="col-lg-4">
-                <a href="javascript:void(0)" class="pricing-card popular">
-                    <div class="head">Professional</div>
+                <a href="javascript:void(0)" class="pricing-card">
+                    <div class="head">Enterprise</div>
                     <div class="body">
-                        <h1><small>$</small>14.99</h1>
+                        <h1><small>$</small>99</h1>
                         <p>Monthly Payment</p>
                     </div>
-                    <div class="popular-item">OUR MOST POPULAR</div>
                     <ul class="list-group">
-                        <li class="list-group-item">5 GB OF SPACE</li>
-                        <li class="list-group-item">50 GB OF BANDWIDTH</li>
-                        <li class="list-group-item">10 WEBSITES</li>
+                        <li class="list-group-item">UNLIMITED OF SPACE</li>
+                        <li class="list-group-item">UNLIMITED BANDWIDTH</li>
+                        <li class="list-group-item">120 WEBSITES</li>
                         <li class="list-group-item">ADVANCED CUSTOMIZATION</li>
                         <li class="list-group-item">WORDPRESS INTEGRATION</li>
                         <li class="list-group-item">EMAIL SUPPORT</li>
@@ -134,6 +147,24 @@ $choice = $_REQUEST['choice'];
                 </a>
             </div>';
                 }
+                echo '<form action="controllers/buying_plan.php" method="post" class="header-form" name="user_change" id="user_change" style="width: 300px">
+                                <div class="head">Enter <span class="text-primary">card</span> information.</div>
+                                <div class="body">
+                                    <div class="form-group">
+                                        <input type="number" class="form-control" placeholder="Number on the card*" name="cardnumber" id="cardnumber">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="date" class="form-control" placeholder="Expiration date*" name="exp_date" id="exp_date">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="number" class="form-control" placeholder="CVC*" name="cvc" id="cvc" style="width: 80px">
+                                    </div>
+                                    <input type="hidden" name="choice" value='. $choice .'>
+                                </div>
+                                <div class="footer">
+                                  <button class="btn btn-primary btn" style="width: 300px">Buy</button>
+                                </div>
+                            </form>';
             }
             ?>
         </div>

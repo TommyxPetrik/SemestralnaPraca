@@ -208,7 +208,6 @@ if (isset($_SESSION['userdata'])){
                 </div>
             </div>
             <div class="col-lg-4 d-none d-lg-block align-self-center">
-                <img src="assets/imgs/eiffel-tower.svg" alt="" class="w-100 tower">
             </div>
         </div>
     </div>

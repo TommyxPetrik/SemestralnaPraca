@@ -110,10 +110,15 @@ print_r($userdata);
                                 ?></p>
                             <p><strong>Plan: </strong><?php
                                 if ($userdata['plan']==0){
+                                    echo 'Not chosen yet';
+                                }
+                                if ($userdata['plan']==1){
                                     echo 'Trial';
-                                }elseif ($userdata['plan']==1){
+                                }
+                                if ($userdata['plan']==2){
                                     echo 'Professional';
-                                }elseif($userdata['plan']==2){
+                                }
+                                if($userdata['plan']==3){
                                     echo 'Enterprise';
                                 }else{
                                     echo '*';

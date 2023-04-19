@@ -14,6 +14,7 @@ try {
     while ($row = $stmt->fetch()) {
         echo "<strong>ID:</strong> ", $row->user_index, "<strong>, Name: </strong>", $row->name, "<strong>, Email: </strong>", $row->email, "<strong>, Country: </strong>", $row->country, "<strong>, Trial: </strong>", $row->trial, "<strong>, Plan: </strong>", $row->plan, "<br>",
         "<br>";
+
     }
 
 } catch (PDOException $e) {

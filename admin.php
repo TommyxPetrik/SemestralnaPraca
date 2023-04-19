@@ -1,7 +1,6 @@
 <?php
 session_start();
 $userdata = $_SESSION['userdata'];
-print_r($userdata);
 $id = 0;
 ?>
 <!DOCTYPE html>
@@ -82,9 +81,6 @@ $id = 0;
                     <div class="tab-content">
                         <div class="tab-pane fade show active" id="users">
                                 <h4 class="title">Users</h4>
-                                <?php
-                                require_once "controllers/list__users.php";
-                                ?>
                             <form action="controllers/user_change.php" method="post" class="header-form" name="user_change" id="user_change" style="width: 300px">
                                 <div class="head">Change <span class="text-primary">user</span> account information.</div>
                                 <div class="body">
@@ -115,76 +111,23 @@ $id = 0;
                                     </div>
                                 </div>
                                 <div class="footer">
-                                    <button class="btn btn-primary btn-block" onclick="location.href='controllers/user_change.php'">Change</button>
+                                    <button class="btn btn-primary btn-block" onclick="location.href='controllers/user_change.php'" style="width: 300px">Change</button>
                                 </div>
                             </form>
-
-                        </div>
-                        <div class="tab-pane fade" id="change-password">
-                            <h4 class="title">Change password</h4>
-                            <form action="controllers/changepassword.php" method="post" class="header-form" name="password-change" id="password-change" style="width: 300px">
-                                <div class="head">Type <span class="text-primary">your</span> email and new password.</div>
-                                <div class="body">
-                                    <div class="form-group">
-                                        <input type="email" class="form-control" placeholder="Email*" name="email" id="email">
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="password" class="form-control" placeholder="Old Password*" name="oldpassword"
-                                               id="oldpassword">
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="password" class="form-control" placeholder="New Password*" name="newpassword"
-                                               id="password">
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="password" class="form-control" placeholder="Repeat New Password*" name="rpassword"
-                                               id="rpassword">
-                                    </div>
+                        <form action="controllers/user_delete.php" method="post" class="header-form" name="user-del" id="user-del" style="width: 300px">
+                            <div class="head">Delete <span class="text-primary">user</span> by ID.</div>
+                            <div class="body">
+                                <div class="form-group">
+                                    <input type="number" class="form-control" placeholder="Type ID." name="user_ID" id="user_ID">
                                 </div>
-                                <div class="footer">
-                                    <button class="btn btn-primary btn-block">Change</button>
-                                </div>
-                            </form>
-                        </div>
-                        <div class="tab-pane fade" id="change-email">
-                            <h4 class="title">Change email</h4>
-                            <p>
-                            <form action="controllers/changeemail.php" method="post" class="header-form" name="email-change" id="email-change" style="width: 300px">
-                                <div class="head">Type <span class="text-primary">your</span> new email and password.</div>
-                                <div class="body">
-                                    <div class="form-group">
-                                        <input type="email" class="form-control" value=<?=$userdata['email']?> name="oldemail" id="oldemail">
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="email" class="form-control" placeholder="New Email*" name="newemail" id="newemail">
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="password" class="form-control" placeholder="Password*" name="password"
-                                               id="password">
-                                    </div>
-                                </div>
-                                <div class="footer">
-                                    <button class="btn btn-primary btn-block">Change</button>
-                                </div>
-                            </form>
-                            </p>
+                            </div>
+                            <div class="footer">
+                                <button class="btn btn-primary btn-block">Delete</button>
+                            </div>
+                        </form>
                         </div>
                         <div class="tab-pane fade" id="users">
                             <h4 class="title">Users</h4>
-                            <?php
-                            require_once "controllers/list__users.php";
-                            ?>
-                            <form action="" method="post" class="header-form" name="user-change" id="user-change" style="width: 200px">
-                                <div class="head">Change <span class="text-primary">user</span> by ID.</div>
-                                <div class="body">
-                                    <div class="form-group">
-                                        <input type="number" class="form-control" placeholder="Type ID." name="user_ID" id="user_ID">
-                                    </div>
-                                </div>
-                                <div class="footer">
-                                    <button class="btn btn-primary btn-block">Change</button>
-                                </div>
-                            </form>
                         </div>
                     </div>
                 </div>
