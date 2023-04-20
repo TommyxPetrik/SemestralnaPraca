@@ -1,7 +1,6 @@
 <?php
 session_start();
 $userdata = $_SESSION['userdata'];
-print_r($userdata);
 ?>
 <!DOCTYPE html>
 <html lang="en">

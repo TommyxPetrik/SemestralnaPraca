@@ -65,76 +65,86 @@ $id = 0;
         </div>
     </div>
 </nav>
-<section class="section">
-    <div class="container">
-        <div class="row justify-content-around">
-            <div class="col-lg-8">
-                <div class="tabs-container">
-                    <ul class="nav tab-nav" id="pills-tab">
-                        <ul class="nav tab-nav" id="pills-tab">
-                            <li class="item">
-                                <a class="link active" id="pills-home-tab" data-toggle="pill" href="#users"
-                                   aria-selected="true">Users</a>
-                            </li>
-                        </ul>
-                    </ul>
-                    <div class="tab-content">
-                        <div class="tab-pane fade show active" id="users">
-                                <h4 class="title">Users</h4>
-                            <form action="controllers/user_change.php" method="post" class="header-form" name="user_change" id="user_change" style="width: 300px">
-                                <div class="head">Change <span class="text-primary">user</span> account information.</div>
-                                <div class="body">
-                                    <div class="form-group">
-                                        <input type="number" class="form-control" placeholder="ID*" name="id" id="id">
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="Name*" name="name" id="name">
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="email" class="form-control" placeholder="Email*" name="email" id="email">
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="number" class="form-control" placeholder="Account state*" name="trial" id="trial">
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="number" class="form-control" placeholder="Plan*" name="plan" id="plan">
-                                    </div>
-                                    <div class="form-group">
-                                        <select type="country" class="form-select" aria-label="Default select example"
-                                                name="country" id="country">
-                                            <option value="sk">Slovakia</option>
-                                            <option value="cz">Czech</option>
-                                            <option value="gb">Great Britain</option>
-                                            <option value="de">Germany</option>
-                                        </select>
-                                    </div>
-                                    </div>
-                                </div>
-                                <div class="footer">
-                                    <button class="btn btn-primary btn-block" onclick="location.href='controllers/user_change.php'" style="width: 300px">Change</button>
-                                </div>
-                            </form>
-                        <form action="controllers/user_delete.php" method="post" class="header-form" name="user-del" id="user-del" style="width: 300px">
-                            <div class="head">Delete <span class="text-primary">user</span> by ID.</div>
-                            <div class="body">
-                                <div class="form-group">
-                                    <input type="number" class="form-control" placeholder="Type ID." name="user_ID" id="user_ID">
-                                </div>
-                            </div>
-                            <div class="footer">
-                                <button class="btn btn-primary btn-block">Delete</button>
-                            </div>
-                        </form>
-                        </div>
-                        <div class="tab-pane fade" id="users">
-                            <h4 class="title">Users</h4>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+
+<section class="section" id="pricing">
+    <div class="container text-center">
+        <h6 class="display-4 has-line">Users</h6>
+        <p class="mb-5 pb-4">Here you can see and edit Users.</p>
+        <?php require_once 'controllers/list__users.php'?>
     </div>
 </section>
+
+<!--<section class="section">-->
+<!--    <div class="container">-->
+<!--        <div class="row justify-content-around">-->
+<!--            <div class="col-lg-8">-->
+<!--                <div class="tabs-container">-->
+<!--                    <ul class="nav tab-nav" id="pills-tab">-->
+<!--                        <ul class="nav tab-nav" id="pills-tab">-->
+<!--                            <li class="item">-->
+<!--                                <a class="link active" id="pills-home-tab" data-toggle="pill" href="#users"-->
+<!--                                   aria-selected="true">Users</a>-->
+<!--                            </li>-->
+<!--                        </ul>-->
+<!--                    </ul>-->
+<!--                    <div class="tab-content">-->
+<!--                        <div class="tab-pane fade show active" id="users">-->
+<!--                                <h4 class="title">Users</h4>-->
+<!--                            --><?php //require_once 'controllers/list__users.php'?>
+<!--                            <form action="controllers/user_change.php" method="post" class="header-form" name="user_change" id="user_change" style="width: 300px">-->
+<!--                                <div class="head">Change <span class="text-primary">user</span> account information.</div>-->
+<!--                                <div class="body">-->
+<!--                                    <div class="form-group">-->
+<!--                                        <input type="number" class="form-control" placeholder="ID*" name="id" id="id">-->
+<!--                                    </div>-->
+<!--                                    <div class="form-group">-->
+<!--                                        <input type="text" class="form-control" placeholder="Name*" name="name" id="name">-->
+<!--                                    </div>-->
+<!--                                    <div class="form-group">-->
+<!--                                        <input type="email" class="form-control" placeholder="Email*" name="email" id="email">-->
+<!--                                    </div>-->
+<!--                                    <div class="form-group">-->
+<!--                                        <input type="number" class="form-control" placeholder="Account state*" name="trial" id="trial">-->
+<!--                                    </div>-->
+<!--                                    <div class="form-group">-->
+<!--                                        <input type="number" class="form-control" placeholder="Plan*" name="plan" id="plan">-->
+<!--                                    </div>-->
+<!--                                    <div class="form-group">-->
+<!--                                        <select type="country" class="form-select" aria-label="Default select example"-->
+<!--                                                name="country" id="country">-->
+<!--                                            <option value="sk">Slovakia</option>-->
+<!--                                            <option value="cz">Czech</option>-->
+<!--                                            <option value="gb">Great Britain</option>-->
+<!--                                            <option value="de">Germany</option>-->
+<!--                                        </select>-->
+<!--                                    </div>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                                <div class="footer">-->
+<!--                                    <button class="btn btn-primary btn-block" onclick="location.href='controllers/user_change.php'" style="width: 300px">Change</button>-->
+<!--                                </div>-->
+<!--                            </form>-->
+<!--                        <form action="controllers/user_delete.php" method="post" class="header-form" name="user-del" id="user-del" style="width: 300px">-->
+<!--                            <div class="head">Delete <span class="text-primary">user</span> by ID.</div>-->
+<!--                            <div class="body">-->
+<!--                                <div class="form-group">-->
+<!--                                    <input type="number" class="form-control" placeholder="Type ID." name="user_ID" id="user_ID">-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                            <div class="footer">-->
+<!--                                <button class="btn btn-primary btn-block">Delete</button>-->
+<!--                            </div>-->
+<!--                        </form>-->
+<!--                        </div>-->
+<!--                        <div class="tab-pane fade" id="users">-->
+<!--                            <h4 class="title">Users</h4>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</section>-->
 <script src="assets/vendors/jquery/jquery-3.4.1.js"></script>
 <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
 <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
