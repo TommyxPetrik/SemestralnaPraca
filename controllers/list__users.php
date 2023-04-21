@@ -34,7 +34,7 @@ try {
       <td>'. $row->country .'</td>
       <td>'. $row->trial .'</td>
       <td>'. $row->plan .'</td>
-      <td><button class="btn btn-primary " ><a style="color: black" href="find_user.php?user_index='. $row->user_index .'">Edit</a></button></td>
+      <td><button class="btn btn-primary " ><a style="color: black" href="controllers/find_user.php?user_index='. $row->user_index .'">Edit</a></button></td>
     </tr>';
 
 
