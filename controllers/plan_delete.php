@@ -2,14 +2,9 @@
 
 require_once 'config.php';
 session_start();
-if (isset($_SESSION['userdata'])){
-    $userdata = $_SESSION['userdata'];
-    $name = $_REQUEST['name'];
-    $email = $_REQUEST["email"];
-    $country = $_REQUEST['country'];
-    $trial = $_REQUEST['trial'];
-    $plan = $_REQUEST['plan'];
-    $id = $_REQUEST['user_index'];
+if (isset($_SESSION['planinfo'])){
+    $planinfo = $_SESSION['planinfo'];
+    $id = $_REQUEST['plan_index'];
 }
 
 try {
@@ -19,16 +14,16 @@ try {
         PDO::ERRMODE_EXCEPTION
     );
 
-    $stmt = $conn->prepare("SELECT * FROM customers");
+    $stmt = $conn->prepare("SELECT * FROM plans");
     $stmt->execute();
 
     $stmt->setFetchMode(PDO::FETCH_OBJ);
     while ($row = $stmt->fetch()) {
-        if ($id == $row->user_index ){
-            $sql = 'DELETE from customers where user_index=:user_index';
+        if ($id == $row->plan_index ){
+            $sql = 'DELETE from plans where plan_index=:plan_index';
             $stm = $conn->prepare($sql);
 
-            $stm->bindParam(":user_index",$id);
+            $stm->bindParam(":plan_index",$id);
 
             $stm->execute();
         }

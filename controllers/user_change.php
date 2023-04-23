@@ -40,7 +40,7 @@ try {
 
     $stm->execute();
 
-    header("Location: ../admin.php");
+    header("Location: ../view/admin.php");
 
 }catch (PDOException $exception){
     $con = null;

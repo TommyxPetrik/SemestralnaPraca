@@ -11,15 +11,15 @@ $choice = $_REQUEST['choice'];
     <meta name="description" content="Start your development with Rubic landing page.">
     <meta name="author" content="Devcrud">
     <title>Rubic</title>
-    <link rel="stylesheet" href="assets/vendors/themify-icons/css/themify-icons.css">
-    <link rel="stylesheet" href="assets/css/rubic.css">
+    <link rel="stylesheet" href="../assets/vendors/themify-icons/css/themify-icons.css">
+    <link rel="stylesheet" href="../assets/css/rubic.css">
 </head>
 <body data-spy="scroll" data-target=".navbar" data-offset="40" id="home">
 
 <nav id="scrollspy" class="navbar page-navbar navbar-dark navbar-expand-md fixed-top" data-spy="affix"
      data-offset-top="20" style="background-color: black">
     <div class="container">
-        <a class="navbar-brand" onclick="location.href='index.php'"><strong class="text-primary">RU</strong><span
+        <a class="navbar-brand" onclick="location.href='../index.php'"><strong class="text-primary">RU</strong><span
                 class="text-light">BIC</span></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -29,19 +29,19 @@ $choice = $_REQUEST['choice'];
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link" onclick="location.href='index.php#features'" >Features</a>
+                    <a class="nav-link" onclick="location.href='../index.php#features'" >Features</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" onclick="location.href='index.php#about'">About</a>
+                    <a class="nav-link" onclick="location.href='../index.php#about'">About</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" onclick="location.href='index.php#pricing'">Pricing</a>
+                    <a class="nav-link" onclick="location.href='../index.php#pricing'">Pricing</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" onclick="location.href= 'index.php#review'">Reviews</a>
+                    <a class="nav-link" onclick="location.href= '../index.php#review'">Reviews</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" onclick="location.href='index.php#contact'">Contact</a>
+                    <a class="nav-link" onclick="location.href='../index.php#contact'">Contact</a>
                 </li>
                 <?php if (!$userdata) {
                     echo '<li class="nav-item">
@@ -51,7 +51,7 @@ $choice = $_REQUEST['choice'];
                 }else{
                     echo '<li class="nav-item">
                     <a class="nav-link btn btn-primary text-dark shadow-none ml-md-4"
-                      href="controllers/logout.php">Sign out</a>
+                      href="../controllers/logout.php">Sign out</a>
                 </li>';
                 }
                 ?>
@@ -147,7 +147,7 @@ $choice = $_REQUEST['choice'];
                 </a>
             </div>';
                 }
-                echo '<form action="controllers/buying_plan.php" method="post" class="header-form" name="user_change" id="user_change" style="width: 300px">
+                echo '<form action="../controllers/buying_plan.php" method="post" class="header-form" name="user_change" id="user_change" style="width: 300px">
                                 <div class="head">Enter <span class="text-primary">card</span> information.</div>
                                 <div class="body">
                                     <div class="form-group">
@@ -159,7 +159,7 @@ $choice = $_REQUEST['choice'];
                                     <div class="form-group">
                                         <input type="number" class="form-control" placeholder="CVC*" name="cvc" id="cvc" style="width: 80px">
                                     </div>
-                                    <input type="hidden" name="choice" value='. $choice .'>
+                                    <input type="hidden" name="choice" value=' . $choice .'>
                                 </div>
                                 <div class="footer">
                                   <button class="btn btn-primary btn" style="width: 300px">Buy</button>
@@ -170,12 +170,12 @@ $choice = $_REQUEST['choice'];
         </div>
     </div>
 </section>
-<script src="assets/vendors/jquery/jquery-3.4.1.js"></script>
+<script src="../assets/vendors/jquery/jquery-3.4.1.js"></script>
 <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
 <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
-<script src="assets/vendors/bootstrap/bootstrap.bundle.js"></script>
-<script src="assets/vendors/bootstrap/bootstrap.affix.js"></script>
-<script src="assets/js/rubic.js"></script>
-<script type="text/javascript" src="validators/validate.js"></script>
+<script src="../assets/vendors/bootstrap/bootstrap.bundle.js"></script>
+<script src="../assets/vendors/bootstrap/bootstrap.affix.js"></script>
+<script src="../assets/js/rubic.js"></script>
+<script type="text/javascript" src="../validators/validate.js"></script>
 </body>
 </html>

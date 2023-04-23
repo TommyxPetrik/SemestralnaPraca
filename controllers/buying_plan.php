@@ -33,16 +33,18 @@ try {
         }
 
     }
-    $sql = 'UPDATE customers SET  trial=:trial, plan=:plan where user_index=:user_index';
-    $stm = $conn->prepare($sql);
+    if ($userdata['trial'] != 99 && $userdata['plan'] != 99){
+        $sql = 'UPDATE customers SET  trial=:trial, plan=:plan where user_index=:user_index';
+        $stm = $conn->prepare($sql);
 
-    $stm->bindParam(":trial",$trial);
-    $stm->bindParam(":plan",$choice);
-    $stm->bindParam(":user_index",$id);
+        $stm->bindParam(":trial",$trial);
+        $stm->bindParam(":plan",$choice);
+        $stm->bindParam(":user_index",$id);
 
-    $stm->execute();
+        $stm->execute();
+    }
 
-    header("Location: ../bought_plan.php");
+    header("Location: ../view/bought_plan.php");
 
 }catch (PDOException $exception){
     $con = null;

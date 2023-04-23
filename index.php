@@ -5,6 +5,10 @@ if (isset($_SESSION['userdata'])){
     $userdata = $_SESSION['userdata'];
     $_SESSION['choice'] = 0;
 }
+$planinfo = '';
+if (isset($_SESSION['planinfo'])){
+    $planinfo = $_SESSION['planinfo'];
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -49,7 +53,7 @@ if (isset($_SESSION['userdata'])){
                 <?php if (!$userdata) {
                  echo '<li class="nav-item">
                     <a class="nav-link btn btn-primary text-dark shadow-none ml-md-4"
-                       href="login.php">Sign in</a>
+                       href="view/login.php">Sign in</a>
                 </li>';
                 }elseif ($userdata){
                     echo '<li class="nav-item">
@@ -60,14 +64,14 @@ if (isset($_SESSION['userdata'])){
                 ?>
                 <?php if ($userdata){
                     echo '<li class="nav-item">
-                    <a class="nav-link" href="profile.php">Profile</a>
+                    <a class="nav-link" href="view/profile.php">Profile</a>
                 </li>';
                 }
                 ?>
                 <?php if ($userdata){
                     if ($userdata['trial'] == 99){
                         echo '<li class="nav-item">
-                    <a class="nav-link" href="admin.php">Admin</a>
+                    <a class="nav-link" href="view/admin.php">Admin</a>
                 </li>';
                 }
                 }
@@ -299,9 +303,9 @@ if (isset($_SESSION['userdata'])){
         <h6 class="display-4 has-line">PRICING OPTIONS</h6>
         <p class="mb-5 pb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
         <div class="row pt-5">
-            <div class="col-lg-4" onclick="location.href='plans.php?choice=1'">
+            <div class="col-lg-4" onclick="location.href='view/plans.php?choice=1'">
                 <a href="javascript:void(0)" class="pricing-card">
-                    <div class="head">Basib</div>
+                    <div class="head"> Basic </div>
                     <div class="body">
                         <h1><small>$</small>0</h1>
                         <p>Free for Life</p>
@@ -314,9 +318,11 @@ if (isset($_SESSION['userdata'])){
                         <li class="list-group-item">WORDPRESS INTEGRATION</li>
                         <li class="list-group-item">EMAIL SUPPORT</li>
                     </ul>
+
+
                 </a>
             </div>
-            <div class="col-lg-4" onclick="location.href='plans.php?choice=2'">
+            <div class="col-lg-4" onclick="location.href='view/plans.php?choice=2'">
                 <a href="javascript:void(0)" class="pricing-card popular">
                     <div class="head">Professional</div>
                     <div class="body">
@@ -334,7 +340,7 @@ if (isset($_SESSION['userdata'])){
                     </ul>
                 </a>
             </div>
-            <div class="col-lg-4" onclick="location.href='plans.php?choice=3'">
+            <div class="col-lg-4" onclick="location.href='view/plans.php?choice=3'">
                 <a href="javascript:void(0)" class="pricing-card">
                     <div class="head">Enterprise</div>
                     <div class="body">
@@ -366,8 +372,8 @@ if (isset($_SESSION['userdata'])){
                     <div class="media">
                         <img class="mr-3" src="assets/imgs/avatar1.jpg" width="60" alt="Generic placeholder image">
                         <div class="media-body">
-                            <h6 class="title">Emma Re</h6>
-                            <p class="text-muted">Web Designer</p>
+                            <h6 class="title">Jane Marry</h6>
+                            <p class="text-muted">Web designer</p>
                         </div>
                     </div>
                 </div>
@@ -399,6 +405,13 @@ if (isset($_SESSION['userdata'])){
                 </div>
             </div>
         </div>
+        <?php
+        if ($userdata){
+            echo '<div class="footer">
+                 <a style="color: black" href="view/review.php"> <button class="btn btn-primary btn-block">Write review</button></a>
+            </div>';
+        }
+        ?>
     </div>
 </section>
 <section class="section has-img-bg text-center">
@@ -414,21 +427,21 @@ if (isset($_SESSION['userdata'])){
         <h6 class="display-4 has-line">CONTACT US</h6>
         <p class="mb-5 pb-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
 
-        <form>
+        <form name="contactform" id="contactform">
             <div class="row mb-4">
                 <div class="col-md-6">
                     <div class="form-group pb-1">
-                        <input type="text" class="form-control" required placeholder="Name">
+                        <input type="text" class="form-control"  placeholder="Name" name="name" id="id">
                     </div>
                     <div class="form-group pb-1">
-                        <input type="email" class="form-control" required placeholder="Email">
+                        <input type="email" class="form-control" placeholder="Email"  name="email" id="email">
                     </div>
                     <div class="form-group ">
-                        <input type="text" class="form-control" placeholder="Subject">
+                        <input type="text" class="form-control" placeholder="Subject" name="subject" id="subject">
                     </div>
                 </div>
                 <div class="col-md-6">
-                    <textarea name="" id="" cols="" rows="7" class="form-control" required
+                    <textarea name="msg" id="msg" cols="" rows="7" class="form-control"
                               placeholder="Message"></textarea>
                 </div>
             </div>

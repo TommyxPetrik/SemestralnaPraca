@@ -17,6 +17,18 @@ try {
         PDO::ERRMODE_EXCEPTION
     );
 
+    $stmt = $con->prepare("SELECT * FROM customers");
+    $stmt->execute();
+
+    $stmt->setFetchMode(PDO::FETCH_OBJ);
+
+    while ($row = $stmt->fetch()){
+        if ($email == $row->email){
+            echo 'Email is already Registered';
+            header('refresh:2; ../view/index.php');
+        }
+    }
+
     $sql = 'INSERT INTO customers (name, email, password, country, trial)
                 VALUES (:name, :email, :password, :country, :trial)';
 
@@ -30,7 +42,7 @@ try {
 
     $stm->execute();
 
-    header("Location: http://localhost:8080/registered.php");
+    header("Location: ../view/registered.php");
 
     //echo "Successfully registered!";
     //session_start();

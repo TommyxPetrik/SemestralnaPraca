@@ -30,7 +30,7 @@ try {
                 header('Location: ../index.php');
             } else {
                 echo "wrong email or password";
-                header('refresh:2; ../login.php');
+                header('refresh:2; ../view/login.php');
             }
         }
     }

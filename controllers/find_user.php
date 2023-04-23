@@ -21,7 +21,7 @@ try {
                     'country'=> $row->country,
                     'user_index'=> $row->user_index
                 ];
-                header('Location: ../admin_edit.php');
+                header('Location: ../view/admin_edit.php');
             }
         }
 

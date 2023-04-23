@@ -52,7 +52,7 @@ try {
 
     $stm->execute();
 
-    header("Location: ../profile.php");
+    header("Location: ../view/profile.php");
 
 }catch (PDOException $exception){
     $con = null;

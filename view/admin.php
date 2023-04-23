@@ -11,15 +11,15 @@ $id = 0;
     <meta name="description" content="Start your development with Rubic landing page.">
     <meta name="author" content="Devcrud">
     <title>Rubic</title>
-    <link rel="stylesheet" href="assets/vendors/themify-icons/css/themify-icons.css">
-    <link rel="stylesheet" href="assets/css/rubic.css">
+    <link rel="stylesheet" href="../assets/vendors/themify-icons/css/themify-icons.css">
+    <link rel="stylesheet" href="../assets/css/rubic.css">
 </head>
 <body data-spy="scroll" data-target=".navbar" data-offset="40" id="home">
 
 <nav id="scrollspy" class="navbar page-navbar navbar-dark navbar-expand-md fixed-top" data-spy="affix"
      data-offset-top="20" style="background-color: black">
     <div class="container">
-        <a class="navbar-brand" onclick="location.href='index.php'"><strong class="text-primary">RU</strong><span
+        <a class="navbar-brand" onclick="location.href='../index.php'"><strong class="text-primary">RU</strong><span
                 class="text-light">BIC</span></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -29,19 +29,19 @@ $id = 0;
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link" onclick="location.href='index.php#features'" >Features</a>
+                    <a class="nav-link" onclick="location.href='../index.php#features'" >Features</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" onclick="location.href='index.php#about'">About</a>
+                    <a class="nav-link" onclick="location.href='../index.php#about'">About</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" onclick="location.href='index.php#pricing'">Pricing</a>
+                    <a class="nav-link" onclick="location.href='../index.php#pricing'">Pricing</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" onclick="location.href= 'index.php#review'">Reviews</a>
+                    <a class="nav-link" onclick="location.href= '../index.php#review'">Reviews</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" onclick="location.href='index.php#contact'">Contact</a>
+                    <a class="nav-link" onclick="location.href='../index.php#contact'">Contact</a>
                 </li>
                 <?php if (!$userdata) {
                     echo '<li class="nav-item">
@@ -51,7 +51,7 @@ $id = 0;
                 }else{
                     echo '<li class="nav-item">
                     <a class="nav-link btn btn-primary text-dark shadow-none ml-md-4"
-                      href="controllers/logout.php">Sign out</a>
+                      href="../controllers/logout.php">Sign out</a>
                 </li>';
                 }
                 ?>
@@ -70,7 +70,13 @@ $id = 0;
     <div class="container text-center">
         <h6 class="display-4 has-line">Users</h6>
         <p class="mb-5 pb-4">Here you can see and edit Users.</p>
-        <?php require_once 'controllers/list__users.php'?>
+        <?php require_once '../controllers/list__users.php' ?>
+    </div>
+    <div class="container text-center">
+        <h6 class="display-4 has-line">Plans</h6>
+        <p class="mb-5 pb-4">Here you can see and edit Plans.</p>
+        <button class="btn btn-primary " style="margin-bottom: 20px" ><a style=" color: black" href="newplan.php">Add new</a></button>
+        <?php require_once '../controllers/list_plans.php' ?>
     </div>
 </section>
 
@@ -145,11 +151,11 @@ $id = 0;
 <!--        </div>-->
 <!--    </div>-->
 <!--</section>-->
-<script src="assets/vendors/jquery/jquery-3.4.1.js"></script>
+<script src="../assets/vendors/jquery/jquery-3.4.1.js"></script>
 <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
 <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
-<script src="assets/vendors/bootstrap/bootstrap.bundle.js"></script>
-<script src="assets/vendors/bootstrap/bootstrap.affix.js"></script>
-<script src="assets/js/rubic.js"></script>
+<script src="../assets/vendors/bootstrap/bootstrap.bundle.js"></script>
+<script src="../assets/vendors/bootstrap/bootstrap.affix.js"></script>
+<script src="../assets/js/rubic.js"></script>
 </body>
 </html>
