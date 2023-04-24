@@ -303,60 +303,9 @@ if (isset($_SESSION['planinfo'])){
         <h6 class="display-4 has-line">PRICING OPTIONS</h6>
         <p class="mb-5 pb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
         <div class="row pt-5">
-            <div class="col-lg-4" onclick="location.href='view/plans.php?choice=1'">
-                <a href="javascript:void(0)" class="pricing-card">
-                    <div class="head"> Basic </div>
-                    <div class="body">
-                        <h1><small>$</small>0</h1>
-                        <p>Free for Life</p>
-                    </div>
-                    <ul class="list-group">
-                        <li class="list-group-item">1 GB OF SPACE</li>
-                        <li class="list-group-item">10 GB OF BANDWIDTH</li>
-                        <li class="list-group-item">3 WEBSITES</li>
-                        <li class="list-group-item">BASIC CUSTOMIZATION</li>
-                        <li class="list-group-item">WORDPRESS INTEGRATION</li>
-                        <li class="list-group-item">EMAIL SUPPORT</li>
-                    </ul>
 
+            <?php require_once 'controllers/update_plans.php'?>
 
-                </a>
-            </div>
-            <div class="col-lg-4" onclick="location.href='view/plans.php?choice=2'">
-                <a href="javascript:void(0)" class="pricing-card popular">
-                    <div class="head">Professional</div>
-                    <div class="body">
-                        <h1><small>$</small>14.99</h1>
-                        <p>Monthly Payment</p>
-                    </div>
-                    <div class="popular-item">OUR MOST POPULAR</div>
-                    <ul class="list-group">
-                        <li class="list-group-item">5 GB OF SPACE</li>
-                        <li class="list-group-item">50 GB OF BANDWIDTH</li>
-                        <li class="list-group-item">10 WEBSITES</li>
-                        <li class="list-group-item">ADVANCED CUSTOMIZATION</li>
-                        <li class="list-group-item">WORDPRESS INTEGRATION</li>
-                        <li class="list-group-item">EMAIL SUPPORT</li>
-                    </ul>
-                </a>
-            </div>
-            <div class="col-lg-4" onclick="location.href='view/plans.php?choice=3'">
-                <a href="javascript:void(0)" class="pricing-card">
-                    <div class="head">Enterprise</div>
-                    <div class="body">
-                        <h1><small>$</small>99</h1>
-                        <p>Monthly Payment</p>
-                    </div>
-                    <ul class="list-group">
-                        <li class="list-group-item">UNLIMITED OF SPACE</li>
-                        <li class="list-group-item">UNLIMITED BANDWIDTH</li>
-                        <li class="list-group-item">120 WEBSITES</li>
-                        <li class="list-group-item">ADVANCED CUSTOMIZATION</li>
-                        <li class="list-group-item">WORDPRESS INTEGRATION</li>
-                        <li class="list-group-item">EMAIL SUPPORT</li>
-                    </ul>
-                </a>
-            </div>
         </div>
     </div>
 </section>

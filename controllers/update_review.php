@@ -2,6 +2,10 @@
 
 require_once 'config.php';
 
+require_once 'controllers/list_reviews_id.php';
+if (isset($_SESSION['reviewids'])){
+    $reviewids = $_SESSION['reviewids'];
+}
 
 try {
     $conn = new PDO("mysql:host=$servername;dbname=$database", $usernamedb, $passworddb);
@@ -15,8 +19,9 @@ try {
 
     $stmt->setFetchMode(PDO::FETCH_OBJ);
     while ($row = $stmt->fetch()) {
-        if ($row->review_index == 1){
-            echo '<div class="col-md-4">
+        if (isset($reviewids[0])){
+            if ($row->review_index == $reviewids[0]){
+                echo '<div class="col-md-4">
                 <div class="testmonial">
                     <p class="description"><i>'. $row->msg .'</i></p>
                     <div class="media">
@@ -28,9 +33,11 @@ try {
                     </div>
                 </div>
             </div>';
+            }
         }
-        if ($row->review_index == 2){
-            echo '<div class="col-md-4">
+        if (isset($reviewids[1])){
+            if ($row->review_index == $reviewids[1] && $row->review_index != $reviewids[0]){
+                echo '<div class="col-md-4">
                 <div class="testmonial">
                     <p class="description"><i>'. $row->msg .'</i></p>
                     <div class="media">
@@ -42,9 +49,11 @@ try {
                     </div>
                 </div>
             </div>';
+            }
         }
-        if ($row->review_index == 3){
-            echo '<div class="col-md-4">
+        if (isset($reviewids[2])){
+            if ($row->review_index == $reviewids[2] && $row->review_index != $reviewids[0] && $row->review_index != $reviewids[1]){
+                echo '<div class="col-md-4">
                 <div class="testmonial">
                     <p class="description"><i>'. $row->msg .'</i></p>
                     <div class="media">
@@ -56,9 +65,11 @@ try {
                     </div>
                 </div>
             </div>';
+            }
         }
-        if ($row->review_index == 4){
-            echo '<div class="col-md-4">
+        if (isset($reviewids[3])){
+            if ($row->review_index == $reviewids[3] && $row->review_index != $reviewids[0] && $row->review_index != $reviewids[1] && $row->review_index != $reviewids[2]){
+                echo '<div class="col-md-4">
                 <div class="testmonial">
                     <p class="description"><i>'. $row->msg .'</i></p>
                     <div class="media">
@@ -70,9 +81,11 @@ try {
                     </div>
                 </div>
             </div>';
+            }
         }
-        if ($row->review_index == 5){
-            echo '<div class="col-md-4">
+        if (isset($reviewids[4])){
+            if ($row->review_index == $reviewids[4] && $row->review_index != $reviewids[0] && $row->review_index != $reviewids[1] && $row->review_index != $reviewids[2] && $row->review_index != $reviewids[3]){
+                echo '<div class="col-md-4">
                 <div class="testmonial">
                     <p class="description"><i>'. $row->msg .'</i></p>
                     <div class="media">
@@ -84,7 +97,9 @@ try {
                     </div>
                 </div>
             </div>';
+            }
         }
+
 
 
 
