@@ -154,5 +154,7 @@ $userinfo = $_SESSION['userinfo'];
 <script src="../assets/vendors/bootstrap/bootstrap.bundle.js"></script>
 <script src="../assets/vendors/bootstrap/bootstrap.affix.js"></script>
 <script src="../assets/js/rubic.js"></script>
+<script type="text/javascript" src="../validators/user_change.js"></script>
+<script type="text/javascript" src="../validators/user_delete.js"></script>
 </body>
 </html>

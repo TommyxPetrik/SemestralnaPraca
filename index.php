@@ -365,45 +365,7 @@ if (isset($_SESSION['planinfo'])){
         <h6 class="display-4 has-line">WHAT OUR CUSTOMERS ARE SAYING</h6>
         <p class="mb-5 pb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
         <div class="row text-left">
-            <div class="col-md-4">
-                <div class="testmonial">
-                    <p class="description"><i>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi,
-                            eaque, repellat. Corporis facilis reprehenderit, cupiditate.</i></p>
-                    <div class="media">
-                        <img class="mr-3" src="assets/imgs/avatar1.jpg" width="60" alt="Generic placeholder image">
-                        <div class="media-body">
-                            <h6 class="title">Jane Marry</h6>
-                            <p class="text-muted">Web designer</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="testmonial">
-                    <p class="description"><i>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi,
-                            eaque, repellat. Corporis facilis reprehenderit, cupiditate.</i></p>
-                    <div class="media">
-                        <img class="mr-3" src="assets/imgs/avatar2.jpg" width="60" alt="Generic placeholder image">
-                        <div class="media-body">
-                            <h6 class="title">John Doe</h6>
-                            <p class="text-muted">Freelancer</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="testmonial">
-                    <p class="description"><i>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi,
-                            eaque, repellat. Corporis facilis reprehenderit, cupiditate.</i></p>
-                    <div class="media">
-                        <img class="mr-3" src="assets/imgs/avatar3.jpg" width="60" alt="Generic placeholder image">
-                        <div class="media-body">
-                            <h6 class="title">Emily Roe</h6>
-                            <p class="text-muted">Graphic Designer</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <?php require_once 'controllers/update_review.php'?>
         </div>
         <?php
         if ($userdata){
@@ -471,5 +433,6 @@ if (isset($_SESSION['planinfo'])){
 <script src="assets/vendors/bootstrap/bootstrap.affix.js"></script>
 <script src="assets/js/rubic.js"></script>
 <script type="text/javascript" src="validators/validate.js"></script>
+<script type="text/javascript"  src="validators/contact.js"></script>
 </body>
 </html>

@@ -2,6 +2,7 @@
 
 require_once 'config.php';
 
+
 try {
     $conn = new PDO("mysql:host=$servername;dbname=$database", $usernamedb, $passworddb);
     $conn->setAttribute(
@@ -15,32 +16,77 @@ try {
     $stmt->setFetchMode(PDO::FETCH_OBJ);
     while ($row = $stmt->fetch()) {
         if ($row->review_index == 1){
-            $_SESSION['review1'] = [
-                'name' => $row->name,
-                'msg' => $row->msg,
-            ];
+            echo '<div class="col-md-4">
+                <div class="testmonial">
+                    <p class="description"><i>'. $row->msg .'</i></p>
+                    <div class="media">
+                        <img class="mr-3" src="assets/imgs/avatar1.jpg" width="60" alt="Generic placeholder image">
+                        <div class="media-body">
+                            <h6 class="title">'. $row->name .'</h6>
+                            <p class="text-muted">Web designer</p>
+                        </div>
+                    </div>
+                </div>
+            </div>';
         }
         if ($row->review_index == 2){
-            $_SESSION['review2'] = [
-                'name' => $row->name,
-                'rmsg' => $row->msg,
-            ];
+            echo '<div class="col-md-4">
+                <div class="testmonial">
+                    <p class="description"><i>'. $row->msg .'</i></p>
+                    <div class="media">
+                        <img class="mr-3" src="assets/imgs/avatar2.jpg" width="60" alt="Generic placeholder image">
+                        <div class="media-body">
+                            <h6 class="title">'. $row->name .'</h6>
+                            <p class="text-muted">Freelancer</p>
+                        </div>
+                    </div>
+                </div>
+            </div>';
         }
         if ($row->review_index == 3){
-            $_SESSION['review3'] = [
-                'name' => $row->name,
-                'msg' => $row->msg,
-            ];
+            echo '<div class="col-md-4">
+                <div class="testmonial">
+                    <p class="description"><i>'. $row->msg .'</i></p>
+                    <div class="media">
+                        <img class="mr-3" src="assets/imgs/avatar3.jpg" width="60" alt="Generic placeholder image">
+                        <div class="media-body">
+                            <h6 class="title">'. $row->name .'</h6>
+                            <p class="text-muted">Graphic Designer</p>
+                        </div>
+                    </div>
+                </div>
+            </div>';
         }
         if ($row->review_index == 4){
-            $_SESSION['review4'] = [
-                'name' => $row->name,
-                'msg' => $row->msg,
-            ];
+            echo '<div class="col-md-4">
+                <div class="testmonial">
+                    <p class="description"><i>'. $row->msg .'</i></p>
+                    <div class="media">
+                        <img class="mr-3" src="assets/imgs/avatar3.jpg" width="60" alt="Generic placeholder image">
+                        <div class="media-body">
+                            <h6 class="title">'. $row->name .'</h6>
+                            <p class="text-muted">Graphic Designer</p>
+                        </div>
+                    </div>
+                </div>
+            </div>';
+        }
+        if ($row->review_index == 5){
+            echo '<div class="col-md-4">
+                <div class="testmonial">
+                    <p class="description"><i>'. $row->msg .'</i></p>
+                    <div class="media">
+                        <img class="mr-3" src="assets/imgs/avatar3.jpg" width="60" alt="Generic placeholder image">
+                        <div class="media-body">
+                            <h6 class="title">'. $row->name .'</h6>
+                            <p class="text-muted">Graphic Designer</p>
+                        </div>
+                    </div>
+                </div>
+            </div>';
         }
 
 
-        header("Location: ../index.php");
 
     }
 }catch (PDOException $exception) {

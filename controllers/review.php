@@ -16,6 +16,7 @@ try {
     $stmt = $con->prepare("SELECT * FROM reviews");
     $stmt->execute();
 
+
     $stmt->setFetchMode(PDO::FETCH_OBJ);
 
     $sql = 'INSERT INTO reviews (name, email, msg)

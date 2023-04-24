@@ -82,7 +82,7 @@ $hideID = 0;
                         <h6 class="display-4 has-line">REVIEW US</h6>
                         <p class="mb-5 pb-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
 
-                        <form action="../controllers/review.php" name="contactform" id="contactform">
+                        <form action="../controllers/review.php" name="reviewform" id="reviewform">
                             <div class="row mb-4">
                                 <div class="col-md-6">
                                     <div class="form-group pb-1">
@@ -111,5 +111,6 @@ $hideID = 0;
 <script src="../assets/vendors/bootstrap/bootstrap.bundle.js"></script>
 <script src="../assets/vendors/bootstrap/bootstrap.affix.js"></script>
 <script src="../assets/js/rubic.js"></script>
+<script type="text/javascript" src="../validators/review.js"></script>
 </body>
 </html>

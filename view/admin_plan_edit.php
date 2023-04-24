@@ -126,7 +126,7 @@ $hideID = 0;
                         <p>
 
                         </p>
-                        <form action="../controllers/plan_delete.php" method="post" class="header-form" name="user-del" id="user-del" style="width: 300px">
+                        <form action="../controllers/plan_delete.php" method="post" class="header-form" name="plan-del" id="plan-del" style="width: 300px">
                             <div class="head">Delete <span class="text-primary">plan</span> by ID.</div>
                             <div class="body">
                                 <div class="form-group">
@@ -159,5 +159,7 @@ $hideID = 0;
 <script src="../assets/vendors/bootstrap/bootstrap.bundle.js"></script>
 <script src="../assets/vendors/bootstrap/bootstrap.affix.js"></script>
 <script src="../assets/js/rubic.js"></script>
+<script type="text/javascript" src="../validators/plan_change.js"></script>
+<script type="text/javascript" src="../validators/plan_delete.js"></script>
 </body>
 </html>

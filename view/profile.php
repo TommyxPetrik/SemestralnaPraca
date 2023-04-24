@@ -188,5 +188,7 @@ $userdata = $_SESSION['userdata'];
 <script src="../assets/vendors/bootstrap/bootstrap.bundle.js"></script>
 <script src="../assets/vendors/bootstrap/bootstrap.affix.js"></script>
 <script src="../assets/js/rubic.js"></script>
+<script type="text/javascript" src="../validators/password_change.js"></script>
+<script type="text/javascript" src="../validators/email_change.js"></script>
 </body>
 </html>
